@@ -1,0 +1,41 @@
+.root {
+  max-width: 60rem;
+  max-width: 100%;
+}
+
+.media {
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+}
+/* // import { makeStyles } from "@mui/material/styles";
+
+// const useStyles = makeStyles({
+//   root: {
+//     // maxWidth: 345, original width style
+//     maxWidth: "100%",
+//   },
+//   media: {
+//     height: 0,
+//     paddingTop: "56.25%", // 16:9
+//   },
+//   cardActions: {
+//     display: "flex",
+//     justifyContent: "flex-end",
+//   },
+//   cardContent: {
+//     display: "flex",
+//     justifyContent: "space-between",
+//   },
+// });
+
+// export default useStyles; */
