@@ -11,7 +11,7 @@ import {
 import logo from "../../assets/logo-store.png";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
   return (
     <Fragment>
       <AppBar
@@ -38,7 +38,7 @@ const Navbar = () => {
           <div style={{ flexGrow: 1 }} />
           <div />
           <IconButton aria-label="Show Cart Items">
-            <Badge badgeContent={2} color="primary">
+            <Badge badgeContent={totalItems} color="primary">
               <ShoppingCartIcon />
             </Badge>
           </IconButton>

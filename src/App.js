@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import commerce from "./lib/commerce";
 import Products from "./components/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
   const [products, setProduct] = useState([]);
@@ -13,18 +14,16 @@ const App = () => {
     setProduct(data);
   };
 
+  // get cart data
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+  };
+
   // add cart data
   const addCartHandler = async (productID, quantity) => {
     const item = await commerce.cart.add(productID, quantity);
 
     setCart(item.cart);
-  };
-
-  // get cart data
-  const fetchCart = async () => {
-    const cartData = await commerce.cart.retrieve();
-
-    setCart(cartData);
   };
 
   useEffect(() => {
@@ -36,8 +35,9 @@ const App = () => {
 
   return (
     <Fragment>
-      <Navbar />
-      <Products products={products} onAddCart={addCartHandler} />
+      <Navbar totalItems={cart.total_items} />
+      {/* <Products products={products} onAddCart={addCartHandler} /> */}
+      <Cart cart={cart} />
     </Fragment>
   );
 };

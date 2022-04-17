@@ -7,7 +7,7 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import styles from "./Product.module.css";
 
 const Product = ({ product, onAddCart }) => {
@@ -21,7 +21,7 @@ const Product = ({ product, onAddCart }) => {
       <CardMedia
         className={styles.cardMedia}
         image={product.image.url}
-        title={""}
+        title={product.name}
         component="img"
       />
       <CardContent>
@@ -44,7 +44,7 @@ const Product = ({ product, onAddCart }) => {
           aria-label="Add To Cart"
           onClick={() => onAddCart(product.id, 1)}
         >
-          <ShoppingCartIcon />
+          <AddShoppingCartIcon />
         </IconButton>
       </CardActions>
     </Card>
